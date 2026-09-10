@@ -136,9 +136,9 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .abox{border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 80px rgba(60,30,10,.2);position:relative}
 .abox img{width:100%;height:100%;object-fit:cover}
 .aovl{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,8,4,.55) 0%,transparent 55%)}
-.alg{position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(12,8,4,.62);backdrop-filter:blur(10px);border:1px solid rgba(192,128,114,.3);border-radius:10px;padding:.6rem 1.2rem}
-.alga{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--glt);letter-spacing:.2em;line-height:1;display:block}
-.algs{font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-top:2px}
+.alg{margin-top:1rem;text-align:center}
+.alga{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--charcoal);letter-spacing:.15em;line-height:1;display:block}
+.algs{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-top:4px}
 .abadge{position:absolute;top:-1.4rem;right:-1.4rem;background:var(--gold);border-radius:14px;padding:1.1rem 1.4rem;text-align:center;box-shadow:0 10px 28px rgba(192,128,114,.5)}
 .abadge-n{font-family:var(--serif);font-size:2.1rem;font-weight:600;color:#fff;line-height:1;display:block}
 .abadge-l{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);display:block;margin-top:.25rem}
@@ -283,12 +283,6 @@ footer{background:var(--dark)}
   .avis{display:block;margin-bottom:2rem}
   .abox{aspect-ratio:16/9;max-height:260px}
   .abadge,.adco{display:none}
-  /* La imagen pasa de vertical a un recorte bajo 16:9 aqui, pero la
-     etiqueta "AMANDA MEDINA" seguia con el tamano pensado para la
-     version alta de escritorio y quedaba desproporcionada. */
-  .alg{bottom:.9rem;left:.9rem;padding:.4rem .8rem;width:fit-content;max-width:calc(100% - 1.8rem)}
-  .alga{font-size:1.05rem;letter-spacing:.15em;white-space:nowrap}
-  .algs{font-size:.4rem;white-space:nowrap}
   .bgr{grid-template-columns:1fr;gap:3rem}
   .fg2{grid-template-columns:1fr 1fr;gap:2rem}
   .cogr{grid-template-columns:1fr}
@@ -568,11 +562,6 @@ footer{background:var(--dark)}
 }
 .abox:hover{box-shadow:0 44px 100px rgba(60,30,10,.24)}
 .aovl{background:linear-gradient(160deg,transparent 40%,rgba(12,8,4,.5) 100%)}
-.alg{bottom:1.5rem;left:1.5rem;padding:.6rem 1rem;
-  background:rgba(253,248,243,.08);backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.15);border-radius:8px}
-.alga{font-size:1.6rem;letter-spacing:.25em}
-.algs{letter-spacing:.22em;font-size:.52rem}
 
 /* Badge +10 — lujo */
 .abadge{
@@ -1434,8 +1423,8 @@ body{background:radial-gradient(ellipse at 15% 0%,rgba(192,128,114,.07) 0%,trans
       <div class="abox">
         <img src="cabina.jpg" alt="Amanda Medina Centro Estética Granada" loading="lazy">
         <div class="aovl"></div>
-        <div class="alg"><span class="alga">AMANDA MEDINA</span><span class="algs">Centro de Estética</span></div>
       </div>
+      <div class="alg"><span class="alga">AMANDA MEDINA</span><span class="algs">Centro de Estética</span></div>
       <div class="abadge"><span class="abadge-n">4,9★</span><span class="abadge-l">en Google</span></div>
       <div class="adco"></div>
     </div>
