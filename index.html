@@ -797,7 +797,7 @@ footer{background:linear-gradient(160deg,var(--charcoal) 0%,#150e09 100%)}
    ══════════════════════════════════════════ */
 
 /* ── AMANDA MEDINA wordmark: tamaño ajustado al nombre más largo ── */
-.hanut{font-size:clamp(2.6rem,6.5vw,5.2rem);letter-spacing:.05em;white-space:nowrap;word-spacing:.15em}
+.hanut{font-size:clamp(2.6rem,6.5vw,5.2rem);letter-spacing:.05em;white-space:nowrap}
 .hanut-sub{letter-spacing:.48em;font-size:clamp(.65rem,1.4vw,.95rem)}
 @keyframes anutEntrada{
   from{opacity:0;transform:translateY(40px) scale(.95);letter-spacing:.12em}
@@ -1915,7 +1915,8 @@ if(window.matchMedia('(hover:hover)').matches){
     const s=document.createElement('span');
     s.className='hanut-letter';
     s.style.animationDelay=(.28+i*.07)+'s';
-    s.textContent=ch;
+    if(ch===' '){ s.style.width='.35em'; s.innerHTML='&nbsp;'; }
+    else s.textContent=ch;
     frag.appendChild(s);
   });
   node.replaceWith(frag);
