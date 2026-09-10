@@ -187,10 +187,13 @@ export async function onRequestPost(context) {
         })
       })
       const data = await response.json()
-      if (!response.ok) return Response.json(
-        { reply: `Estoy teniendo un problema técnico ahora mismo. Escríbenos por WhatsApp y te atendemos: https://wa.me/${NEGOCIO.whatsapp} 💬` },
-        { headers: { 'Access-Control-Allow-Origin': '*' } }
-      )
+      if (!response.ok) {
+        console.error('ANTHROPIC_ERROR', response.status, JSON.stringify(data))
+        return Response.json(
+          { reply: `Estoy teniendo un problema técnico ahora mismo. Escríbenos por WhatsApp y te atendemos: https://wa.me/${NEGOCIO.whatsapp} 💬` },
+          { headers: { 'Access-Control-Allow-Origin': '*' } }
+        )
+      }
       if (data.stop_reason !== 'tool_use') {
         const textBlock = data.content.find(b => b.type === 'text')
         return Response.json(
@@ -220,6 +223,7 @@ export async function onRequestPost(context) {
       })
     }
   } catch (error) {
+    console.error('CATCH_ERROR', error.message, error.stack)
     return Response.json(
       { reply: `Estoy teniendo un problema técnico ahora mismo. Escríbenos por WhatsApp y te atendemos: https://wa.me/${NEGOCIO.whatsapp} 💬` },
       { headers: { 'Access-Control-Allow-Origin': '*' } }
