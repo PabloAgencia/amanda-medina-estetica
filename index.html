@@ -1811,6 +1811,12 @@ function closeMenu(){
   const cb=document.getElementById('menu-close-btn');if(cb)cb.remove();
 }
 hbg.addEventListener('click',()=>{
+  // #nls vive dentro de #nav, que coge backdrop-filter al hacer scroll (#nav.s).
+  // backdrop-filter crea un containing block nuevo para position:fixed, así que
+  // el overlay a pantalla completa se ancla al nav en vez de al viewport y no
+  // cubre toda la pantalla. Solo importa en móvil, que es cuando se abre esto,
+  // así que sacarlo al body aquí no afecta al layout de escritorio.
+  if(nls.parentElement!==document.body) document.body.appendChild(nls);
   const o=nls.classList.toggle('open');
   hbg.classList.toggle('is-open',o);
   hbg.setAttribute('aria-expanded',String(o));
